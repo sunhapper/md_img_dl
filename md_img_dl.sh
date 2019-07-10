@@ -13,7 +13,7 @@ usage () {
 }
 
 filter_download(){
-    grep -oE "\!\[.*?\]\(.*?\)" $1 | sed  -E  "s/(\!\[.*\]\()(https?:\/\/.+)(.*\))/\2/gi" |xargs  wget -cN -P $2
+    grep -oE "\!\[.*?\]\(https?:\/\/.*?\)" $1 | sed  -E  "s/(\!\[.*\]\()(https?:\/\/.+)(.*\))/\2/gi" |xargs  wget -cN -P $2
 }
 
 parse_file (){
